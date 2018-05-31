@@ -1,0 +1,42 @@
+API URL : http://localhost:8080/api/email
+
+METHOD : POST
+
+HEADER: {
+    content-type: application/json
+    authorization: Bearer <--SENDGRID KEY-->
+    accept: application/json
+    accept-encoding: gzip, deflate
+    accept-language: en-US,en;q=0.8
+    content-type: application/json
+    user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+}
+
+BODY : {{
+  "personalizations": [
+    {
+      "to": [
+        "hcbsdjbsd@xyz.com",
+        "asdf@gmail.com"
+      ],
+      "cc": [
+        "jsdjdsjsd@xyz.com",
+        "sefg@hotmail.com"
+      ],
+      "bcc": [
+        "pradeep@xyz.com",
+        "sefg@gmail.com"
+      ],
+      "subject": "subject1"
+    }
+  ],
+  "from": "hcbsdjbsd@xyz.com",
+  "reply_to": "ajeet@xyz.com",
+  "subject": "common subject",
+  "content": [
+    {
+      "type": "text/html",
+      "value": "<html><p>Hello,<br /><br />This mail is sent through ninja server and sendgrid hosted by local server </p></html>"
+    }
+  ]
+}
